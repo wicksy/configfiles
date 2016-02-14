@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/wicksy/git/wicksy/docker-lab/elasticsearch/Docker'
+let g:netrw_dirhist_2='/Users/wicksy/.aws/shell'
+let g:netrw_dirhist_3='/Users/wicksy/git/wicksy/aws-lab/terraform/personal/templates'
+let g:netrw_dirhist_4='/Users/wicksy/git/wicksy/docker-lab/salt-master'
+let g:netrw_dirhist_5='/Users/wicksy/git/wicksy/aws-lab/terraform/personal/templates'
+let g:netrw_dirhist_6='/Users/wicksy/git/wicksy/docker-lab/jre-7'
+let g:netrw_dirhist_7='/Users/wicksy/git/wicksy/docker-lab/synology/Docker'
+let g:netrw_dirhist_8='/private/tmp/synology-task-wrapper'
