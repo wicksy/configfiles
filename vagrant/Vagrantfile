@@ -1,0 +1,48 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 1024
+    v.cpus = 2
+    #v.gui = true
+  end
+
+  config.vm.define "trusty" do |trusty|
+    trusty.vm.box = "ubuntu/trusty64"
+    trusty.vm.network "private_network", ip: "192.168.10.2"
+    trusty.vm.hostname = "trusty"
+    trusty.vm.synced_folder "/Users/wicksy/", "/wicksy"
+  end
+
+  config.vm.define "scratch" do |scratch|
+    scratch.vm.box = "centos/7"
+    scratch.vm.network "private_network", ip: "192.168.10.3"
+    scratch.vm.hostname = "scratch-dev"
+  end
+
+  config.vm.define "centos6" do |centos6|
+    centos6.vm.box = "geerlingguy/centos6"
+    centos6.vm.network "private_network", ip: "192.168.10.4"
+    centos6.vm.hostname = "centos6-dev"
+    centos6.vm.synced_folder "/Users/wicksy/", "/wicksy"
+  end
+
+  config.vm.define "centos7" do |centos7|
+    centos7.vm.box = "centos/7"
+    centos7.vm.network "private_network", ip: "192.168.10.5"
+    centos7.vm.hostname = "centos7-dev"
+    centos7.vm.boot_timeout = 600
+  end
+
+  config.vm.define "pfsense" do |pfsense|
+    pfsense.vm.box = "pfsense"
+    pfsense.vm.network "private_network", ip: "192.168.10.100"
+    pfsense.vm.hostname = "pfsense-dev"
+    pfsense.vm.synced_folder '.', '/vagrant', disabled: true
+    pfsense.ssh.shell = "/bin/sh"
+    pfsense.vm.boot_timeout = 600
+  end
+
+end
