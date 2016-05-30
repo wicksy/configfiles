@@ -1,3 +1,6 @@
+# Functions
+#
+
 function _show_git_status {
   # Get the current git branch and colorize to indicate branch state
   # branch_name+ indicates there are stash(es)
@@ -66,7 +69,22 @@ function _show_git_status {
 
 function _build_prompt {
   git_status=$(_show_git_status)
-  PS1="\u@\h${git_status}:\w\$ "
+  if [[ $(id -u) == 0 ]] ; then
+    _prompt="#"
+  else
+    _prompt="$"
+  fi
+  PS1="\u@\h${git_status}:\w\${_prompt} "
   return 0
 }
 PROMPT_COMMAND="_build_prompt; $PROMPT_COMMAND"
+
+# Virtual environments for pips
+#
+export WORKON_HOME=~/.pyenvironments
+mkdir -p ${WORKON_HOME}
+source /usr/local/bin/virtualenvwrapper.sh
+
+# Command retrieval
+#
+set -o vi
