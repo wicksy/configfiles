@@ -151,3 +151,10 @@ source /usr/local/bin/virtualenvwrapper.sh
 # Command retrieval
 #
 set -o vi
+
+# Fire up an ssh-agent for me unless one is already running
+#
+user=$(id --user --name)
+if [[ -z "$(pgrep -u ${user} ssh-agent)" ]] ; then
+  eval $(ssh-agent)
+fi
