@@ -1,31 +1,36 @@
-" turn off auto adding comments on next line
-" so you can cut and paste reliably
-" http://vimdoc.sourceforge.net/htmldoc/change.html#fo-table
-set fo=tcq
 set nocompatible
+
+set autoread
+set backspace=indent,eol,start
+set fo=tcq
+set hidden
+set history=1000
 set modeline
 set number
-set ic
 set paste
+set ruler
+set showcmd
+set showmode
 
 syntax on
 
-" set default comment color to cyan instead of darkblue
-" which is not very legible on a black background
-highlight comment ctermfg=cyan
-
-set tabstop=2
+set autoindent
 set expandtab
-set softtabstop=2
 set shiftwidth=2
+set smartindent
+set smarttab
+set softtabstop=2
+set tabstop=2
 
+highlight comment ctermfg=cyan
 highlight LiteralTabs ctermbg=darkgreen guibg=darkgreen
 match LiteralTabs /\s\  /
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$/
 
-" Show me a ruler
-set ruler
+set ignorecase
+set incsearch
+set hlsearch
+set smartcase
 
-" Enable indentation matching for =>'s
 filetype plugin indent on
