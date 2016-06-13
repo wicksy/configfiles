@@ -2,15 +2,24 @@ set nocompatible
 
 set autoread
 set backspace=indent,eol,start
+set background=dark
+set binary
+set exrc
 set fo=tcq
 set hidden
 set history=1000
+set laststatus=2
 set modeline
+set noeol
+set nostartofline
 set number
 set paste
 set ruler
+set secure
 set showcmd
 set showmode
+set ttyfast
+set wildmenu
 
 syntax on
 
