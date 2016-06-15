@@ -152,7 +152,19 @@ source /usr/local/bin/virtualenvwrapper.sh
 #
 set -o vi
 
-# Fire up an ssh-agent for me unless one is already running
+# Fire up an ssh-agent for me unless this is OSX as it
+# should already be running so just add default key.
+# Do nothing if you don't recognise the OS.
 #
-eval $(ssh-agent)
-ssh-add ${HOME}/.ssh/id_rsa
+OS=$(uname -s | tr '[:upper:]' '[:lower:]')
+case "${OS}" in
+  linux)
+    eval $(ssh-agent)
+    ssh-add ${HOME}/.ssh/id_rsa
+    ;;
+  darwin)
+    ssh-add ${HOME}/.ssh/id_rsa
+    ;;
+  *)
+    ;;
+esac
