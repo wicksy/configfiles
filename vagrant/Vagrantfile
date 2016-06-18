@@ -3,38 +3,82 @@
 
 Vagrant.configure(2) do |config|
 
-  config.vm.provider "virtualbox" do |v|
-    v.memory = 1024
-    v.cpus = 2
-    #v.gui = true
-  end
-
   config.vm.define "trusty" do |trusty|
+
+    trusty.vm.provider "virtualbox" do |v|
+      v.memory = 1024
+      v.cpus = 2
+      #v.gui = true
+    end
+
     trusty.vm.box = "ubuntu/trusty64"
     trusty.vm.network "private_network", ip: "192.168.10.2"
     trusty.vm.hostname = "trusty"
   end
 
   config.vm.define "scratch" do |scratch|
+
+    scratch.vm.provider "virtualbox" do |v|
+      v.memory = 1024
+      v.cpus = 2
+      #v.gui = true
+    end
+
     scratch.vm.box = "centos/7"
     scratch.vm.network "private_network", ip: "192.168.10.3"
     scratch.vm.hostname = "scratch-dev"
   end
 
   config.vm.define "centos6" do |centos6|
+
+    centos6.vm.provider "virtualbox" do |v|
+      v.memory = 1024
+      v.cpus = 2
+      #v.gui = true
+    end
+
     centos6.vm.box = "geerlingguy/centos6"
     centos6.vm.network "private_network", ip: "192.168.10.4"
     centos6.vm.hostname = "centos6-dev"
   end
 
   config.vm.define "centos7" do |centos7|
+
+    centos7.vm.provider "virtualbox" do |v|
+      v.memory = 1024
+      v.cpus = 2
+      #v.gui = true
+    end
+
     centos7.vm.box = "centos/7"
     centos7.vm.network "private_network", ip: "192.168.10.5"
     centos7.vm.hostname = "centos7-dev"
     centos7.vm.boot_timeout = 600
   end
 
+  config.vm.define "laptop" do |laptop|
+
+    laptop.vm.provider "virtualbox" do |v|
+      v.memory = 1024
+      v.cpus = 2
+      #v.gui = true
+    end
+
+    laptop.vm.box = "ubuntu/trusty64"
+    laptop.vm.network "private_network", ip: "192.168.10.6"
+    laptop.vm.hostname = "Dell-Inspiron"
+    laptop.vm.synced_folder "/Users/wicksy/git/wicksy/laptop-build/salt/roots/", "/srv/salt/"
+    laptop.vm.synced_folder "/Users/wicksy/git/wicksy/laptop-build/salt/pillar/", "/srv/pillar/"
+  end
+
   config.vm.define "pfsense" do |pfsense|
+
+    pfsense.vm.provider "virtualbox" do |v|
+      v.memory = 1024
+      v.cpus = 2
+      #v.gui = true
+    end
+
     pfsense.vm.box = "pfsense"
     pfsense.vm.network "private_network", ip: "192.168.10.100"
     pfsense.vm.hostname = "pfsense-dev"
