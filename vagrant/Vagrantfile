@@ -69,6 +69,7 @@ Vagrant.configure(2) do |config|
     laptop.vm.hostname = "Dell-Inspiron"
     laptop.vm.synced_folder "/Users/wicksy/git/wicksy/laptop-build/salt/roots/", "/srv/salt/"
     laptop.vm.synced_folder "/Users/wicksy/git/wicksy/laptop-build/salt/pillar/", "/srv/pillar/"
+    laptop.vm.synced_folder "/Users/wicksy/git/wicksy/laptop-build/ansible/", "/srv/ansible/"
   end
 
   config.vm.define "pfsense" do |pfsense|
