@@ -159,11 +159,15 @@ set -o vi
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 case "${OS}" in
   linux)
-    eval $(ssh-agent)
-    ssh-add ${HOME}/.ssh/id_rsa
+    if [[ -s "${HOME}/.ssh/id_rsa" ]] ; then
+      eval $(ssh-agent)
+      ssh-add ${HOME}/.ssh/id_rsa
+    fi
     ;;
   darwin)
-    ssh-add ${HOME}/.ssh/id_rsa
+    if [[ -s "${HOME}/.ssh/id_rsa" ]] ; then
+      ssh-add ${HOME}/.ssh/id_rsa
+    fi
     ;;
   *)
     ;;
