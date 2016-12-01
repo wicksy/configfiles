@@ -1,4 +1,29 @@
-set nocompatible
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Plugin 'bash-support.vim'
+Plugin 'hdima/python-syntax'
+" Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'chase/vim-ansible-yaml'
+Plugin 'pearofducks/ansible-vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+
+let python_highlight_all = 1
 
 set autoread
 set backspace=indent,eol,start
@@ -42,4 +67,4 @@ set incsearch
 set hlsearch
 set smartcase
 
-filetype plugin indent on
+" filetype plugin indent on
