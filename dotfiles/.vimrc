@@ -15,6 +15,7 @@ Plugin 'hdima/python-syntax'
 " Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'pearofducks/ansible-vim'
+Plugin 'powerline/powerline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -23,7 +24,9 @@ filetype plugin indent on    " required
 "filetype plugin on
 "
 
+" Plugin settings
 let python_highlight_all = 1
+set rtp+=${HOME}/.vim/bundle/powerline/powerline/bindings/vim
 
 set autoread
 set backspace=indent,eol,start
