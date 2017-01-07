@@ -152,6 +152,10 @@ source /usr/local/bin/virtualenvwrapper.sh
 #
 set -o vi
 
+# Editor
+#
+export EDITOR=vim
+
 # Fire up an ssh-agent for me unless this is OSX as it
 # should already be running so just add default key.
 # Do nothing if you don't recognise the OS.
