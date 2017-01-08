@@ -110,10 +110,11 @@ export PROJECTS=$HOME/projects/bp
 # Docker Machine
 eval $(docker-machine env docker-vm)
 
-# My stuff
+# My stuf
 alias vmstat="vm_stat"
 alias sshnas="ssh -t -l sshadmin -p 2542 -i ~/.ssh/ds415plus ds415plus"
 export HOMEBREW_GITHUB_API_TOKEN=REDACTED
+export EDITOR=vim
 ulimit -n 1024
 archey
 
