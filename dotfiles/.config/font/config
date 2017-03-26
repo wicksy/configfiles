@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+
+<fontconfig>
+    <!-- ... -->
+
+    <alias>
+        <family>monospace</family>
+        <prefer>
+            <family>PowerlineSymbols</family>
+            <family>FontAwesome</family>
+            <family>Terminus</family>
+        </prefer>
+    </alias>
+
+    <!-- ... -->
+</fontconfig>
