@@ -10,12 +10,13 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" Plugin 'bash-support.vim'
 Plugin 'hdima/python-syntax'
-" Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'powerline/powerline'
+Plugin 'ekalinin/dockerfile.vim'
+Plugin 'rodjek/vim-puppet'
+Plugin 'glench/vim-jinja2-syntax'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
