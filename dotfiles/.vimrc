@@ -17,6 +17,7 @@ Plugin 'powerline/powerline'
 Plugin 'ekalinin/dockerfile.vim'
 Plugin 'rodjek/vim-puppet'
 Plugin 'glench/vim-jinja2-syntax'
+Plugin 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -32,6 +33,7 @@ set rtp+=${HOME}/.vim/bundle/powerline/powerline/bindings/vim
 set autoread
 set backspace=indent,eol,start
 set background=dark
+colorscheme solarized
 set binary
 set exrc
 set fo=tcq
