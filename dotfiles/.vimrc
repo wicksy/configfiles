@@ -33,7 +33,7 @@ set rtp+=${HOME}/.vim/bundle/powerline/powerline/bindings/vim
 set autoread
 set backspace=indent,eol,start
 set background=dark
-colorscheme solarized
+" colorscheme solarized
 set binary
 set exrc
 set fo=tcq
