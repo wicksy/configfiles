@@ -1,5 +1,25 @@
+# Colours
+#
+        RED="\[\033[0;31m\]"
+     YELLOW="\[\033[1;33m\]"
+      GREEN="\[\033[0;32m\]"
+       BLUE="\[\033[1;34m\]"
+  LIGHT_RED="\[\033[1;31m\]"
+LIGHT_GREEN="\[\033[1;32m\]"
+      WHITE="\[\033[1;37m\]"
+LIGHT_GRAY="\[\033[0;37m\]"
+COLOR_NONE="\[\e[0m\]"
+
 # Functions
 #
+
+function virtualenv_info {
+  if [[ -z "$VIRTUAL_ENV" ]]; then
+    VENV=""
+  else
+    VENV="(${BLUE}$(basename ${VIRTUAL_ENV})${COLOR_NONE})"
+  fi
+}
 
 function _show_git_status {
   # Get the current git branch and colorize to indicate branch state
@@ -68,13 +88,14 @@ function _show_git_status {
 }
 
 function _build_prompt {
+  virtualenv_info
   git_status=$(_show_git_status)
   if [[ $(id -u) == 0 ]] ; then
     _prompt="#"
   else
     _prompt="$"
   fi
-  PS1="\u@\h${git_status}:\w\${_prompt} "
+  PS1="\u@\h${git_status}:\w${VENV}\${_prompt} "
   return 0
 }
 PROMPT_COMMAND="_build_prompt; $PROMPT_COMMAND"
@@ -163,6 +184,11 @@ export EDITOR=vim
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 case "${OS}" in
   linux)
+    pgrep gpg-agent >/dev/null 2>&1
+    rc=$?
+    if [[ ${rc} -ne 0 ]] ; then
+      gpg-agent --daemon --quiet
+    fi
     if [[ -s "${HOME}/.ssh/id_rsa" ]] ; then
       eval $(ssh-agent)
       ssh-add ${HOME}/.ssh/id_rsa
