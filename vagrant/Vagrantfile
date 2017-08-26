@@ -34,6 +34,7 @@ Vagrant.configure(2) do |config|
     laptop14.vm.synced_folder "/Users/wicksy/git/wicksy/laptop-build/bin/", "/srv/bin/"
     laptop14.vm.synced_folder "/Users/wicksy/git/wicksy/laptop-build/test/", "/srv/test/"
     laptop14.vm.synced_folder "/Users/wicksy/git/wicksy/puppet-lab/modules/", "/srv/puppet/"
+    laptop14.vm.synced_folder "/Users/wicksy/git/wicksy/docker-lab", "/srv/docker-lab/"
   end
 
   config.vm.define "laptop16" do |laptop16|
@@ -53,6 +54,7 @@ Vagrant.configure(2) do |config|
     laptop16.vm.synced_folder "/Users/wicksy/git/wicksy/laptop-build/bin/", "/srv/bin/"
     laptop16.vm.synced_folder "/Users/wicksy/git/wicksy/laptop-build/test/", "/srv/test/"
     laptop16.vm.synced_folder "/Users/wicksy/git/wicksy/puppet-lab/modules/", "/srv/puppet/"
+    laptop16.vm.synced_folder "/Users/wicksy/git/wicksy/docker-lab", "/srv/docker-lab/"
   end
 
   config.vm.define "pfsense" do |pfsense|
