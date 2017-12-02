@@ -177,6 +177,9 @@ set -o vi
 #
 export EDITOR=vim
 
+# No cowsay on ansible please
+export ANSIBLE_NOCOWS=1
+
 # Fire up an ssh-agent for me unless this is OSX as it
 # should already be running so just add default key.
 # Do nothing if you don't recognise the OS.
