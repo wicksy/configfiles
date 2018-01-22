@@ -13,10 +13,10 @@
 [merge]
   ff = only
   conflictstyle = diff3
-  tool = vimdiff
+  tool = meld
 [push]
   default = simple
 [status]
   showUntrackedFiles = all
 [diff]
-  tool = vimdiff
+  tool = meld
