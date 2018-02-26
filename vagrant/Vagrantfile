@@ -73,4 +73,22 @@ Vagrant.configure(2) do |config|
     pfsense.vm.boot_timeout = 600
   end
 
+  config.vm.define "mint" do |mint|
+
+    mint.vm.provider "virtualbox" do |v|
+      v.memory = 4096
+      v.cpus = 2
+      v.gui = true
+    end
+
+    mint.vm.box = "npalm/mint17-amd64-cinnamon"
+    mint.vm.network "private_network", ip: "192.168.10.5"
+    mint.vm.hostname = "Minty-Fresh"
+    mint.vm.synced_folder "/Users/wicksy/git/wicksy/laptop-build/salt/roots/", "/srv/salt/"
+    mint.vm.synced_folder "/Users/wicksy/git/wicksy/laptop-build/salt/pillar/", "/srv/pillar/"
+    mint.vm.synced_folder "/Users/wicksy/git/wicksy/laptop-build/ansible/", "/srv/ansible/"
+    mint.vm.synced_folder "/Users/wicksy/git/wicksy/laptop-build/bin/", "/srv/bin/"
+    mint.vm.synced_folder "/Users/wicksy/git/wicksy/laptop-build/test/", "/srv/test/"
+  end
+
 end
