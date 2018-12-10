@@ -89,6 +89,7 @@ Vagrant.configure(2) do |config|
     mint.vm.synced_folder "/Users/wicksy/git/wicksy/laptop-build/ansible/", "/srv/ansible/"
     mint.vm.synced_folder "/Users/wicksy/git/wicksy/laptop-build/bin/", "/srv/bin/"
     mint.vm.synced_folder "/Users/wicksy/git/wicksy/laptop-build/test/", "/srv/test/"
+    mint.vm.synced_folder "/Users/wicksy/Video/", "/home/vagrant/Downloads/"
   end
 
 end
