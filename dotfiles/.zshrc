@@ -114,6 +114,7 @@ eval $(docker-machine env docker-vm)
 alias vmstat="vm_stat"
 export HOMEBREW_GITHUB_API_TOKEN=REDACTED
 export EDITOR=vim
+export ANSIBLE_NOCOWS=1
 ulimit -n 1024
 archey
 
