@@ -18,6 +18,7 @@ Plugin 'ekalinin/dockerfile.vim'
 Plugin 'rodjek/vim-puppet'
 Plugin 'glench/vim-jinja2-syntax'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'preservim/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -27,13 +28,14 @@ filetype plugin indent on    " required
 "
 
 " Plugin settings
+autocmd vimenter * NERDTree
 let python_highlight_all = 1
 set rtp+=${HOME}/.vim/bundle/powerline/powerline/bindings/vim
 
 set autoread
 set backspace=indent,eol,start
 set background=dark
-" colorscheme solarized
+colorscheme solarized
 set binary
 set exrc
 set fo=tcq
